@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw } from "lucide-react";
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 
 const Index = () => {
@@ -71,7 +71,7 @@ const Index = () => {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-3xl font-bold text-accent-foreground">R$ 37,90</span>
-              <span className="text-sm text-accent-foreground">⭐</span>
+              <Gift className="w-5 h-5 text-accent-foreground" />
             </div>
             <div className="flex items-center gap-2">
               <span className="text-sm text-accent-foreground/80 line-through">R$ 1.389,90</span>
