@@ -3,8 +3,30 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
 import productImage from "@/assets/product-main.png";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 0) {
+          clearInterval(timer);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
   const reviews = [
     {
       name: "Carlos Silva",
@@ -81,7 +103,7 @@ const Index = () => {
           <div className="text-right">
             <div className="text-xs font-semibold text-accent-foreground mb-1">+ OFERTA RELÂMPAGO</div>
             <div className="bg-background text-primary px-3 py-1 rounded text-sm font-bold">
-              TERMINA EM 59:40
+              TERMINA EM {formatTime(timeLeft)}
             </div>
           </div>
         </div>
