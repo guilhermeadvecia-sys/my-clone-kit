@@ -1,11 +1,281 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown } from "lucide-react";
+import productImage from "@/assets/product-main.png";
 
 const Index = () => {
+  const reviews = [
+    {
+      name: "Carlos Silva",
+      location: "São Paulo, SP",
+      rating: 5,
+      text: "Pra finalidade que vou usar,que é plugar um violão ou viola na entrada p 10 de mic ,ficou espetacular pra fazer rodas de viola onde tem muita gente conversando perto e cobrindo o som do instrumento, plugado para voz e violão também ficou um som muito limpo, única coisa achei que daria mais que 120db com 100 watts rms,sendo que minha jbl flip 6 que tem apenas 30 wats alcança incríveis 99 db.",
+      images: ["", ""]
+    },
+    {
+      name: "Rafaela Lima",
+      location: "Rio de Janeiro, RJ",
+      rating: 5,
+      text: "Tem proporcionado momentos muitos divertidos com os amigos! única coisa que não me agradou é que os microfones não conectam com outros dispositivos... apenas nessa caixa. Então se algo acontecer com a caixa perco 2 microfones ótimos! a caixa é super linda e com som ótimo porém a bateria deixa a desejar mas se ligar na tomada fica perfeita.",
+      images: ["", "", "", ""]
+    },
+    {
+      name: "Pedro Raul",
+      location: "Belo Horizonte, MG",
+      rating: 5,
+      text: "Caramba que perfeição da jbl som fantástico grave muito forte melhor compra da jbl ja fiz recomendo a todos.",
+      images: ["", ""]
+    },
+    {
+      name: "Pietro Santos",
+      location: "Curitiba, PR",
+      rating: 5,
+      text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
+      images: ["", ""]
+    }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-background border-b border-border px-4 py-3 flex items-center justify-between">
+        <button className="p-2">
+          <X className="w-6 h-6" />
+        </button>
+        <div className="flex items-center gap-3">
+          <button className="p-2">
+            <Share2 className="w-6 h-6" />
+          </button>
+          <button className="p-2">
+            <ShoppingCart className="w-6 h-6" />
+          </button>
+          <button className="p-2">
+            <span className="text-2xl">⋮</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Product Image */}
+      <div className="bg-background px-4 py-6">
+        <img 
+          src={productImage} 
+          alt="JBL PartyBox Encore Essential" 
+          className="w-full max-w-md mx-auto object-contain"
+        />
+      </div>
+
+      {/* Price Section */}
+      <div className="bg-accent px-4 py-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-3xl font-bold text-accent-foreground">R$ 37,90</span>
+              <span className="text-sm text-accent-foreground">⭐</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-accent-foreground/80 line-through">R$ 1.389,90</span>
+              <span className="text-sm font-semibold text-accent-foreground">Economize 88%</span>
+            </div>
+          </div>
+          <div className="text-right">
+            <div className="text-xs font-semibold text-accent-foreground mb-1">+ OFERTA RELÂMPAGO</div>
+            <div className="bg-background text-primary px-3 py-1 rounded text-sm font-bold">
+              TERMINA EM 59:40
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Product Info */}
+      <div className="px-4 py-6 space-y-4">
+        <Badge className="bg-badge text-badge-foreground">Promo do Mês</Badge>
+        
+        <h1 className="text-xl font-semibold">
+          Caixa De Som Bluetooth Partybox Encore Essential 100w Jbl Cor Preto
+        </h1>
+
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+            <span className="font-semibold">4.7</span>
+          </div>
+          <span className="text-muted-foreground">({reviews.length + 487})</span>
+          <span className="text-muted-foreground">• 4473 vendidos</span>
+        </div>
+
+        {/* Voltage */}
+        <div>
+          <h3 className="font-semibold mb-2">Voltagem</h3>
+          <Button variant="outline" className="rounded-full">127/220V</Button>
+        </div>
+
+        {/* Benefits */}
+        <Card className="p-4 space-y-4">
+          <div className="flex gap-3">
+            <div className="text-success mt-1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 17h18v2H3v-2zm0-7h18v2H3v-2zm0-7h18v2H3V3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-semibold text-success">Frete grátis</h4>
+              <p className="text-sm text-muted-foreground">Entrega expressa em todo Brasil. Receba seu produto em até 15 dias úteis com código de rastreamento completo.</p>
+            </div>
+          </div>
+
+          <div className="flex gap-3">
+            <div className="text-foreground mt-1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="font-semibold">Devolução grátis até 30 dias</h4>
+              <p className="text-sm text-muted-foreground">Não gostou? Devolvemos seu dinheiro sem burocracia. Frete de retorno gratuito e reembolso rápido garantido.</p>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      {/* Reviews Section */}
+      <div className="px-4 py-6 border-t border-border">
+        <h2 className="text-xl font-bold mb-4">Avaliações dos clientes ({reviews.length + 487})</h2>
+        
+        <div className="space-y-6">
+          {reviews.map((review, index) => (
+            <div key={index} className="space-y-2">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-muted" />
+                <div>
+                  <div className="font-semibold">{review.name}</div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground">{review.location}</p>
+              <p className="text-sm">{review.text}</p>
+              {review.images.length > 0 && (
+                <div className="flex gap-2 overflow-x-auto">
+                  {review.images.map((_, imgIndex) => (
+                    <div key={imgIndex} className="w-20 h-20 bg-muted rounded flex-shrink-0" />
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Store Reviews */}
+      <div className="px-4 py-6 border-t border-border">
+        <h2 className="text-xl font-bold mb-4">Avaliações da loja (207)</h2>
+        
+        <div className="flex gap-2 mb-4 overflow-x-auto">
+          <Button variant="outline" className="rounded-full whitespace-nowrap">
+            <span className="mr-2">📷</span>
+            Imagens (52)
+          </Button>
+          <Button variant="outline" className="rounded-full whitespace-nowrap">
+            5 ⭐ (155)
+          </Button>
+          <Button variant="outline" className="rounded-full whitespace-nowrap">
+            4 ⭐ (22)
+          </Button>
+        </div>
+
+        <div className="flex items-center gap-3 p-4 border border-border rounded-lg">
+          <div className="w-12 h-12 bg-[#ff3f00] rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-xl">JBL</span>
+          </div>
+          <div className="flex-1">
+            <h3 className="font-bold">JBL</h3>
+            <p className="text-sm text-muted-foreground">207 produtos</p>
+          </div>
+          <Button variant="outline">Seguir</Button>
+        </div>
+      </div>
+
+      {/* Product Description */}
+      <div className="px-4 py-6 border-t border-border">
+        <h2 className="text-xl font-bold mb-4">Descrição do produto</h2>
+        
+        <div className="space-y-4 text-sm">
+          <p className="font-semibold">O JBL PartyBox Encore Essential é para todas as festas!</p>
+          
+          <div>
+            <h3 className="font-bold mb-2">EXPERIÊNCIA IMERSIVA</h3>
+            <p>Aproveite o som incrível JBL Original Pro com graves profundos, garantindo uma experiência sonora imersiva e envolvente em qualquer lugar.</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">ESPETÁCULO DE LUZES</h3>
+            <p>Transforme qualquer ambiente em uma pista de dança com o show de luzes dinâmico, que acompanha o ritmo da sua música, adicionando mais cores na festa.</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">ATÉ 6 HORAS DE BATERIA</h3>
+            <p>Com até 6 horas de tempo de reprodução, o JBL PartyBox Encore Essential permite que você mantenha a festa em movimento, sem se preocupar com tomadas ou cabos.</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">À PROVA DE ÁGUA</h3>
+            <p>Dance sem preocupações na praia ou à beira da piscina, pois o PartyBox Encore Essential é à prova de água IPX4, garantindo durabilidade mesmo em ambientes úmidos.</p>
+          </div>
+
+          <div>
+            <h3 className="font-bold mb-2">QUAL O CONTEÚDO DA CAIXA?</h3>
+            <ul className="list-disc list-inside space-y-1">
+              <li>1 JBL PartyBox Encore Essential</li>
+              <li>1 Cabo de energia AC (o plugue AC e a quantidade variam conforme a região)</li>
+              <li>1 Guia de início rápido</li>
+              <li>1 Ficha de segurança</li>
+            </ul>
+          </div>
+
+          <p className="pt-4">
+            <span className="font-bold">A JBL</span> destaca-se com áudio de alta qualidade, tecnologia avançada e design moderno, proporcionando momentos únicos na vida das pessoas.
+          </p>
+
+          <div className="pt-4">
+            <h3 className="font-bold mb-2">Aviso Legal</h3>
+            <p className="text-muted-foreground">• A duração da bateria depende do uso que se dê ao produto.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Expandable Sections */}
+      <div className="px-4 py-6 border-t border-border space-y-3">
+        {["Comece a comprar", "Ganhe dinheiro conosco", "Informações da empresa", "Suporte ao cliente"].map((section) => (
+          <button key={section} className="w-full flex items-center justify-between py-3 border-b border-border">
+            <span className="font-semibold">{section}</span>
+            <ChevronDown className="w-5 h-5" />
+          </button>
+        ))}
+      </div>
+
+      {/* Bottom Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border px-4 py-3 flex items-center justify-around">
+        <button className="flex flex-col items-center gap-1">
+          <Home className="w-6 h-6" />
+          <span className="text-xs">Loja</span>
+        </button>
+        <button className="flex flex-col items-center gap-1">
+          <MessageCircle className="w-6 h-6" />
+          <span className="text-xs">Chat</span>
+        </button>
+        <div className="flex flex-col items-center gap-1">
+          <span className="text-xs">Reviews do</span>
+          <span className="text-xs">produto</span>
+        </div>
+        <Button className="bg-primary text-primary-foreground px-8 py-6 text-base font-bold">
+          COMPRAR AGORA
+        </Button>
       </div>
     </div>
   );
