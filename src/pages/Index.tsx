@@ -269,7 +269,7 @@ const Index = () => {
           <span className="text-xs">Reviews do</span>
           <span className="text-xs">produto</span>
         </div>
-        <Button className="bg-primary text-primary-foreground px-8 py-6 text-base font-bold">
+        <Button className="bg-primary text-primary-foreground px-8 py-6 font-bold text-sm">
           COMPRAR AGORA
         </Button>
       </div>
