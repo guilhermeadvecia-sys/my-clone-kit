@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown } from "lucide-react";
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 
 const Index = () => {
@@ -114,9 +114,7 @@ const Index = () => {
         <Card className="p-4 space-y-4">
           <div className="flex gap-3">
             <div className="text-success mt-1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3 17h18v2H3v-2zm0-7h18v2H3v-2zm0-7h18v2H3V3z"/>
-              </svg>
+              <Truck className="w-6 h-6" />
             </div>
             <div>
               <h4 className="font-semibold text-success">Frete grátis</h4>
@@ -126,9 +124,7 @@ const Index = () => {
 
           <div className="flex gap-3">
             <div className="text-foreground mt-1">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-              </svg>
+              <RotateCcw className="w-6 h-6" />
             </div>
             <div>
               <h4 className="font-semibold">Devolução grátis até 30 dias</h4>
