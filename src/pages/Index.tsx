@@ -88,7 +88,7 @@ const Index = () => {
           </div>
           <div className="text-right">
             <div className="text-xs font-semibold text-accent-foreground mb-1">+ OFERTA RELÂMPAGO</div>
-            <div className="bg-background text-primary px-3 py-1 rounded text-sm font-bold">
+            <div className="bg-background text-sm font-bold py-0 px-[8px] text-orange-600 rounded shadow-none">
               TERMINA EM {formatTime(timeLeft)}
             </div>
           </div>
