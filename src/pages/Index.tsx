@@ -266,7 +266,7 @@ const Index = () => {
           <span className="text-xs">Chat</span>
         </button>
         <div className="flex flex-col items-center gap-1">
-          <span className="text-xs">Reviews do</span>
+          <span className="text-xs">Avaliações do</span>
           <span className="text-xs">produto</span>
         </div>
         <Button className="bg-primary text-primary-foreground px-8 py-6 font-bold text-sm">
