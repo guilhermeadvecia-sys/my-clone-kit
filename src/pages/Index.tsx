@@ -4,13 +4,12 @@ import { Card } from "@/components/ui/card";
 import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 import { useState, useEffect } from "react";
-
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft(prev => {
         if (prev <= 0) {
           clearInterval(timer);
           return 0;
@@ -18,48 +17,39 @@ const Index = () => {
         return prev - 1;
       });
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
-
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
-  const reviews = [
-    {
-      name: "Carlos Silva",
-      location: "São Paulo, SP",
-      rating: 5,
-      text: "Pra finalidade que vou usar,que é plugar um violão ou viola na entrada p 10 de mic ,ficou espetacular pra fazer rodas de viola onde tem muita gente conversando perto e cobrindo o som do instrumento, plugado para voz e violão também ficou um som muito limpo, única coisa achei que daria mais que 120db com 100 watts rms,sendo que minha jbl flip 6 que tem apenas 30 wats alcança incríveis 99 db.",
-      images: ["", ""]
-    },
-    {
-      name: "Rafaela Lima",
-      location: "Rio de Janeiro, RJ",
-      rating: 5,
-      text: "Tem proporcionado momentos muitos divertidos com os amigos! única coisa que não me agradou é que os microfones não conectam com outros dispositivos... apenas nessa caixa. Então se algo acontecer com a caixa perco 2 microfones ótimos! a caixa é super linda e com som ótimo porém a bateria deixa a desejar mas se ligar na tomada fica perfeita.",
-      images: ["", "", "", ""]
-    },
-    {
-      name: "Pedro Raul",
-      location: "Belo Horizonte, MG",
-      rating: 5,
-      text: "Caramba que perfeição da jbl som fantástico grave muito forte melhor compra da jbl ja fiz recomendo a todos.",
-      images: ["", ""]
-    },
-    {
-      name: "Pietro Santos",
-      location: "Curitiba, PR",
-      rating: 5,
-      text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
-      images: ["", ""]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const reviews = [{
+    name: "Carlos Silva",
+    location: "São Paulo, SP",
+    rating: 5,
+    text: "Pra finalidade que vou usar,que é plugar um violão ou viola na entrada p 10 de mic ,ficou espetacular pra fazer rodas de viola onde tem muita gente conversando perto e cobrindo o som do instrumento, plugado para voz e violão também ficou um som muito limpo, única coisa achei que daria mais que 120db com 100 watts rms,sendo que minha jbl flip 6 que tem apenas 30 wats alcança incríveis 99 db.",
+    images: ["", ""]
+  }, {
+    name: "Rafaela Lima",
+    location: "Rio de Janeiro, RJ",
+    rating: 5,
+    text: "Tem proporcionado momentos muitos divertidos com os amigos! única coisa que não me agradou é que os microfones não conectam com outros dispositivos... apenas nessa caixa. Então se algo acontecer com a caixa perco 2 microfones ótimos! a caixa é super linda e com som ótimo porém a bateria deixa a desejar mas se ligar na tomada fica perfeita.",
+    images: ["", "", "", ""]
+  }, {
+    name: "Pedro Raul",
+    location: "Belo Horizonte, MG",
+    rating: 5,
+    text: "Caramba que perfeição da jbl som fantástico grave muito forte melhor compra da jbl ja fiz recomendo a todos.",
+    images: ["", ""]
+  }, {
+    name: "Pietro Santos",
+    location: "Curitiba, PR",
+    rating: 5,
+    text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
+    images: ["", ""]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border px-4 py-3 flex items-center justify-between">
         <button className="p-2">
@@ -80,11 +70,7 @@ const Index = () => {
 
       {/* Product Image */}
       <div className="bg-background px-4 py-6">
-        <img 
-          src={productImage} 
-          alt="JBL PartyBox Encore Essential" 
-          className="w-full max-w-md mx-auto object-contain"
-        />
+        <img alt="JBL PartyBox Encore Essential" className="w-full max-w-md mx-auto object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
       </div>
 
       {/* Price Section */}
@@ -163,32 +149,24 @@ const Index = () => {
         <h2 className="text-xl font-bold mb-4">Avaliações dos clientes ({reviews.length + 487})</h2>
         
         <div className="space-y-6">
-          {reviews.map((review, index) => (
-            <div key={index} className="space-y-2">
+          {reviews.map((review, index) => <div key={index} className="space-y-2">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-muted" />
                 <div>
                   <div className="font-semibold">{review.name}</div>
                   <div className="flex items-center gap-2">
                     <div className="flex">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
+                      {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                     </div>
                   </div>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">{review.location}</p>
               <p className="text-sm">{review.text}</p>
-              {review.images.length > 0 && (
-                <div className="flex gap-2 overflow-x-auto">
-                  {review.images.map((_, imgIndex) => (
-                    <div key={imgIndex} className="w-20 h-20 bg-muted rounded flex-shrink-0" />
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+              {review.images.length > 0 && <div className="flex gap-2 overflow-x-auto">
+                  {review.images.map((_, imgIndex) => <div key={imgIndex} className="w-20 h-20 bg-muted rounded flex-shrink-0" />)}
+                </div>}
+            </div>)}
         </div>
       </div>
 
@@ -271,12 +249,10 @@ const Index = () => {
 
       {/* Expandable Sections */}
       <div className="px-4 py-6 border-t border-border space-y-3">
-        {["Comece a comprar", "Ganhe dinheiro conosco", "Informações da empresa", "Suporte ao cliente"].map((section) => (
-          <button key={section} className="w-full flex items-center justify-between py-3 border-b border-border">
+        {["Comece a comprar", "Ganhe dinheiro conosco", "Informações da empresa", "Suporte ao cliente"].map(section => <button key={section} className="w-full flex items-center justify-between py-3 border-b border-border">
             <span className="font-semibold">{section}</span>
             <ChevronDown className="w-5 h-5" />
-          </button>
-        ))}
+          </button>)}
       </div>
 
       {/* Bottom Navigation */}
@@ -297,8 +273,6 @@ const Index = () => {
           COMPRAR AGORA
         </Button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
