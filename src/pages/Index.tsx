@@ -97,9 +97,7 @@ const Index = () => {
 
       {/* Product Info */}
       <div className="px-4 py-6 space-y-4">
-        <Badge className="bg-badge-promo text-badge-promo-foreground rounded-full px-3 py-1 text-xs font-medium">
-          Promoção do Mês
-        </Badge>
+        <Badge className="text-badge-promo-foreground rounded-full px-3 py-1 text-xs font-medium bg-fuchsia-300 text-zinc-950 border-none border-0 shadow-sm">Black Friday</Badge>
         
         <h1 className="text-xl font-semibold">
           Caixa De Som Bluetooth Partybox Encore Essential 100w Jbl Cor Preto
