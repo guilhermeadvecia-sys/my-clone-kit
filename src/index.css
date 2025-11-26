@@ -42,6 +42,9 @@ All colors MUST be HSL.
     --badge: 320 65% 52%;
     --badge-foreground: 0 0% 100%;
 
+    --badge-promo: 350 100% 95%;
+    --badge-promo-foreground: 340 82% 52%;
+
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
