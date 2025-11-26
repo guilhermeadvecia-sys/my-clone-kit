@@ -78,8 +78,8 @@ const Index = () => {
         <div className="flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-3xl font-bold text-accent-foreground">R$ 37,90</span>
-              <Gift className="w-5 h-5 text-accent-foreground" />
+              <span className="font-bold text-accent-foreground text-2xl">R$ 37,90</span>
+              <Gift className="text-accent-foreground w-[15px] h-[15px]" />
             </div>
             <div className="flex items-center gap-2">
               <span className="text-sm text-accent-foreground/80 line-through">R$ 1.389,90</span>
