@@ -54,6 +54,8 @@ export default {
         badge: {
           DEFAULT: "hsl(var(--badge))",
           foreground: "hsl(var(--badge-foreground))",
+          promo: "hsl(var(--badge-promo))",
+          "promo-foreground": "hsl(var(--badge-promo-foreground))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
