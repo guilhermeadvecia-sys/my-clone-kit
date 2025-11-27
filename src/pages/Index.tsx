@@ -9,11 +9,12 @@ const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
   const [voltageSelected, setVoltageSelected] = useState(false);
   const reviewsRef = useRef<HTMLDivElement>(null);
-
   const scrollToReviews = () => {
-    reviewsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    reviewsRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -140,11 +141,7 @@ const Index = () => {
         {/* Voltage */}
         <div>
           <h3 className="font-semibold mb-2">Voltagem</h3>
-          <Button 
-            variant="outline" 
-            className={`rounded-full ${voltageSelected ? 'bg-orange-500 text-white border-orange-500 hover:bg-orange-600' : ''}`}
-            onClick={() => setVoltageSelected(!voltageSelected)}
-          >
+          <Button variant="outline" className={`rounded-full ${voltageSelected ? 'bg-orange-500 text-white border-orange-500 hover:bg-orange-600' : ''}`} onClick={() => setVoltageSelected(!voltageSelected)}>
             127/220V
           </Button>
         </div>
