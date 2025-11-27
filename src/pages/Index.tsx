@@ -71,8 +71,8 @@ const Index = () => {
       </header>
 
       {/* Product Images Carousel */}
-      <div className="bg-background px-4 py-6">
-        <Carousel className="w-full max-w-md mx-auto">
+      <div className="bg-background px-4 py-4">
+        <Carousel className="w-full max-w-xs mx-auto">
           <CarouselContent>
             <CarouselItem>
               <img alt="JBL PartyBox Encore Essential - Vista frontal" className="w-full object-contain" src="/product-0.jpg" />
