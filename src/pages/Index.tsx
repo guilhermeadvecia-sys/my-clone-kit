@@ -4,10 +4,15 @@ import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
 import productImage from "@/assets/product-main.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
   const [voltageSelected, setVoltageSelected] = useState(false);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReviews = () => {
+    reviewsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -169,7 +174,7 @@ const Index = () => {
       </div>
 
       {/* Reviews Section */}
-      <div className="px-4 py-6 border-t border-border">
+      <div ref={reviewsRef} className="px-4 py-6 border-t border-border">
         <h2 className="text-xl font-bold mb-4">Avaliações dos clientes ({reviews.length + 487})</h2>
         
         <div className="space-y-6">
@@ -289,10 +294,10 @@ const Index = () => {
           <MessageCircle className="w-6 h-6" />
           <span className="text-xs">Chat</span>
         </button>
-        <div className="flex flex-col items-center gap-1">
+        <button onClick={scrollToReviews} className="flex flex-col items-center gap-1">
           <span className="text-xs">Avaliações do</span>
           <span className="text-xs">produto</span>
-        </div>
+        </button>
         <Button className="bg-primary text-primary-foreground px-8 py-6 font-bold text-sm">
           COMPRAR AGORA
         </Button>
