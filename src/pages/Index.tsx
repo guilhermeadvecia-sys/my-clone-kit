@@ -75,6 +75,9 @@ const Index = () => {
         <Carousel className="w-full max-w-md mx-auto">
           <CarouselContent>
             <CarouselItem>
+              <img alt="JBL PartyBox Encore Essential - Vista frontal" className="w-full object-contain" src="/product-0.jpg" />
+            </CarouselItem>
+            <CarouselItem>
               <img alt="JBL PartyBox Encore Essential - Dimensões" className="w-full object-contain" src="/product-1.jpg" />
             </CarouselItem>
             <CarouselItem>
