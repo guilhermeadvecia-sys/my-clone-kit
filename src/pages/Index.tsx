@@ -75,13 +75,16 @@ const Index = () => {
         <Carousel className="w-full max-w-md mx-auto">
           <CarouselContent>
             <CarouselItem>
-              <img alt="JBL PartyBox Encore Essential - Vista 1" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+              <img alt="JBL PartyBox Encore Essential - Dimensões" className="w-full object-contain" src="/product-1.jpg" />
             </CarouselItem>
             <CarouselItem>
-              <img alt="JBL PartyBox Encore Essential - Vista 2" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+              <img alt="JBL PartyBox Encore Essential - À prova de respingos" className="w-full object-contain" src="/product-2.jpg" />
             </CarouselItem>
             <CarouselItem>
-              <img alt="JBL PartyBox Encore Essential - Vista 3" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+              <img alt="JBL PartyBox Encore Essential - Até 12 horas de reprodução" className="w-full object-contain" src="/product-3.jpg" />
+            </CarouselItem>
+            <CarouselItem>
+              <img alt="JBL PartyBox Encore Essential - Som Original Pro" className="w-full object-contain" src="/product-4.jpg" />
             </CarouselItem>
           </CarouselContent>
         </Carousel>
