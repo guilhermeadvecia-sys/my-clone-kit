@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 import { useState, useEffect } from "react";
@@ -68,9 +69,23 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Product Image */}
+      {/* Product Images Carousel */}
       <div className="bg-background px-4 py-6">
-        <img alt="JBL PartyBox Encore Essential" className="w-full max-w-md mx-auto object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+        <Carousel className="w-full max-w-md mx-auto">
+          <CarouselContent>
+            <CarouselItem>
+              <img alt="JBL PartyBox Encore Essential - Vista 1" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+            </CarouselItem>
+            <CarouselItem>
+              <img alt="JBL PartyBox Encore Essential - Vista 2" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+            </CarouselItem>
+            <CarouselItem>
+              <img alt="JBL PartyBox Encore Essential - Vista 3" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
+        </Carousel>
       </div>
 
       {/* Price Section */}
