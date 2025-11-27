@@ -83,8 +83,6 @@ const Index = () => {
               <img alt="JBL PartyBox Encore Essential - Vista 3" className="w-full object-contain" src="/lovable-uploads/4870bfb2-ad50-4071-8762-b66eff5851a5.jpg" />
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious className="left-2" />
-          <CarouselNext className="right-2" />
         </Carousel>
       </div>
 
