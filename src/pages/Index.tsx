@@ -54,25 +54,25 @@ const Index = () => {
     location: "São Paulo, SP",
     rating: 5,
     text: "Pra finalidade que vou usar,que é plugar um violão ou viola na entrada p 10 de mic ,ficou espetacular pra fazer rodas de viola onde tem muita gente conversando perto e cobrindo o som do instrumento, plugado para voz e violão também ficou um som muito limpo, única coisa achei que daria mais que 120db com 100 watts rms,sendo que minha jbl flip 6 que tem apenas 30 wats alcança incríveis 99 db.",
-    images: ["", ""]
+    images: ["/product-1.jpg", "/product-2.jpg"]
   }, {
     name: "Rafaela Lima",
     location: "Rio de Janeiro, RJ",
     rating: 5,
     text: "Tem proporcionado momentos muitos divertidos com os amigos! única coisa que não me agradou é que os microfones não conectam com outros dispositivos... apenas nessa caixa. Então se algo acontecer com a caixa perco 2 microfones ótimos! a caixa é super linda e com som ótimo porém a bateria deixa a desejar mas se ligar na tomada fica perfeita.",
-    images: ["", "", "", ""]
+    images: ["/product-0.jpg", "/product-3.jpg", "/product-4.jpg", "/product-1.jpg"]
   }, {
     name: "Pedro Raul",
     location: "Belo Horizonte, MG",
     rating: 5,
     text: "Caramba que perfeição da jbl som fantástico grave muito forte melhor compra da jbl ja fiz recomendo a todos.",
-    images: ["", ""]
+    images: ["/product-2.jpg", "/product-3.jpg"]
   }, {
     name: "Pietro Santos",
     location: "Curitiba, PR",
     rating: 5,
     text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
-    images: ["", ""]
+    images: ["/product-4.jpg", "/product-0.jpg"]
   }];
   return <div className="min-h-screen bg-background">
       {/* Header */}
@@ -207,7 +207,7 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">{review.location}</p>
               <p className="text-sm">{review.text}</p>
               {review.images.length > 0 && <div className="flex gap-2 overflow-x-auto">
-                  {review.images.map((_, imgIndex) => <div key={imgIndex} className="w-20 h-20 bg-muted rounded flex-shrink-0" />)}
+                  {review.images.map((img, imgIndex) => <img key={imgIndex} src={img} alt={`Avaliação ${index + 1} - Foto ${imgIndex + 1}`} className="w-20 h-20 rounded object-cover flex-shrink-0" />)}
                 </div>}
             </div>)}
         </div>
