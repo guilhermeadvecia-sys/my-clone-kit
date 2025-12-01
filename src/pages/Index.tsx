@@ -68,7 +68,7 @@ const Index = () => {
     location: "Belo Horizonte, MG",
     rating: 5,
     text: "Caramba que perfeição da jbl som fantástico grave muito forte melhor compra da jbl ja fiz recomendo a todos.",
-    images: ["/product-2.jpg", "/product-3.jpg"],
+    images: ["https://jbloficialbr.lovable.app/assets/review-jbl-7-bSZOCZEB.webp", "https://jbloficialbr.lovable.app/assets/review-jbl-8-DTrkFIqQ.webp"],
     avatar: "https://jbloficialbr.lovable.app/assets/review-profile-3-DIYsgiJG.jpg"
   }, {
     name: "Pietro Santos",
