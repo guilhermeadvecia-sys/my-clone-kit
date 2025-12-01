@@ -401,7 +401,7 @@ const Index = () => {
           <MessageCircle className="w-6 h-6" />
           <span className="text-xs">Chat</span>
         </button>
-        <button onClick={scrollToReviews} className="flex flex-col items-center gap-1">
+        <button onClick={scrollToReviews} className="flex flex-col items-center gap-1 bg-secondary rounded-lg p-2">
           <span className="text-xs">Avaliações do</span>
           <span className="text-xs">produto</span>
         </button>
