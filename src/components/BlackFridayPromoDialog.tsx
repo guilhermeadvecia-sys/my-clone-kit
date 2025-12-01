@@ -19,7 +19,7 @@ const BlackFridayPromoDialog = () => {
           <img
             src="https://brandlogos.net/wp-content/uploads/2022/05/tiktok_shop-logo_brandlogos.net_5ewfz-768x768.png"
             alt="TikTok Shop Logo"
-            className="w-24 h-24 object-contain mb-4"
+            className="w-32 h-32 object-contain mb-4"
           />
           <DialogTitle className="text-2xl font-bold">Promoção Black Friday</DialogTitle>
           <DialogDescription className="text-lg text-muted-foreground mt-2">
