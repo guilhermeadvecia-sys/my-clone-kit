@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package } from "lucide-react";
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package, Zap } from "lucide-react"; // Adicionado Zap
 import productImage from "@/assets/product-main.png";
 import jblLogo from "@/assets/jbl-logo.jpg";
 import { useState, useEffect, useRef } from "react";
@@ -150,7 +150,10 @@ const Index = () => {
             </div>
           </div>
           <div className="text-right">
-            <div className="text-xs font-semibold text-accent-foreground mb-1"> OFERTA RELÂMPAGO</div>
+            <div className="flex items-center justify-end gap-1 mb-1"> {/* Adicionado flex e gap para o ícone */}
+              <Zap className="w-4 h-4 text-white" /> {/* Ícone de relâmpago */}
+              <div className="text-xs font-semibold text-accent-foreground"> OFERTA RELÂMPAGO</div>
+            </div>
             <div className="bg-background text-sm font-bold py-0 px-[8px] text-orange-600 rounded shadow-none">
               TERMINA EM {formatTime(timeLeft)}
             </div>
