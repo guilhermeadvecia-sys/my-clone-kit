@@ -7,16 +7,30 @@ import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck,
 import productImage from "@/assets/product-main.png";
 import jblLogo from "@/assets/jbl-logo.jpg";
 import { useState, useEffect, useRef } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
   const [voltageSelected, setVoltageSelected] = useState(false);
   const [storeDialogOpen, setStoreDialogOpen] = useState(false);
   const reviewsRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
   const scrollToReviews = () => {
     reviewsRef.current?.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
+  };
+
+  const handleAddToCart = () => {
+    toast({
+      title: "Produto Adicionado ao carrinho!",
+      duration: 3000,
+    });
+  };
+
+  const handleBuyNow = () => {
+    window.open('https://pagamento.eletronicpay.shop/checkout?product=c8fbf0e5-ca44-11f0-a40c-46da4690ad53', '_blank');
   };
   useEffect(() => {
     const timer = setInterval(() => {
@@ -70,7 +84,7 @@ const Index = () => {
           <button className="p-2">
             <Share2 className="w-6 h-6" />
           </button>
-          <button className="p-2">
+          <button onClick={handleAddToCart} className="p-2">
             <ShoppingCart className="w-6 h-6" />
           </button>
           <button className="p-2">
@@ -358,10 +372,12 @@ const Index = () => {
           <span className="text-xs">Avaliações do</span>
           <span className="text-xs">produto</span>
         </button>
-        <Button className="bg-primary text-primary-foreground px-8 py-6 font-bold text-sm">
+        <Button onClick={handleBuyNow} className="bg-primary text-primary-foreground px-8 py-6 font-bold text-sm">
           COMPRAR AGORA
         </Button>
       </div>
+      
+      <Toaster />
     </div>;
 };
 export default Index;
