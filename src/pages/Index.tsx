@@ -71,11 +71,12 @@ const Index = () => {
     images: ["https://jbloficialbr.lovable.app/assets/review-jbl-7-bSZOCZEB.webp", "https://jbloficialbr.lovable.app/assets/review-jbl-8-DTrkFIqQ.webp"],
     avatar: "https://jbloficialbr.lovable.app/assets/review-profile-3-DIYsgiJG.jpg"
   }, {
-    name: "Pietro Santos",
+    name: "Amanda Silva",
     location: "Curitiba, PR",
     rating: 5,
     text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
-    images: ["/product-4.jpg", "/product-0.jpg"]
+    images: ["/product-4.jpg", "/product-0.jpg"],
+    avatar: "https://jbloficialbr.lovable.app/assets/review-profile-new-4-CaSKJ7Oh.jpg"
   }];
   return <div className="min-h-screen bg-background">
       {/* Header */}
