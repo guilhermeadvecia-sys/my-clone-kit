@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package, Zap } from "lucide-react"; // Adicionado Zap
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package, Zap } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 import jblLogo from "@/assets/jbl-logo.jpg";
 import { useState, useEffect, useRef } from "react";
@@ -34,7 +34,7 @@ const Index = () => {
   };
 
   const handleBuyNow = () => {
-    window.open('https://pagamento.eletronicpay.shop/checkout?product=c8fbf0e5-ca44-11f0-a40c-46da4690ad53', '_blank');
+    window.location.href = 'https://pagamento.eletronicpay.shop/checkout?product=c8fbf0e5-ca44-11f0-a40c-46da4690ad53';
   };
 
   const handleFollowStore = (e: React.MouseEvent) => {
@@ -150,8 +150,8 @@ const Index = () => {
             </div>
           </div>
           <div className="text-right">
-            <div className="flex items-center justify-end gap-1 mb-1"> {/* Adicionado flex e gap para o ícone */}
-              <Zap className="w-4 h-4 text-white" /> {/* Ícone de relâmpago */}
+            <div className="flex items-center justify-end gap-1 mb-1">
+              <Zap className="w-4 h-4 text-white" />
               <div className="text-xs font-semibold text-accent-foreground"> OFERTA RELÂMPAGO</div>
             </div>
             <div className="bg-background text-sm font-bold py-0 px-[8px] text-orange-600 rounded shadow-none">
