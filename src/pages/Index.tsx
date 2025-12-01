@@ -2,12 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package } from "lucide-react";
 import productImage from "@/assets/product-main.png";
 import { useState, useEffect, useRef } from "react";
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
   const [voltageSelected, setVoltageSelected] = useState(false);
+  const [storeDialogOpen, setStoreDialogOpen] = useState(false);
   const reviewsRef = useRef<HTMLDivElement>(null);
   const scrollToReviews = () => {
     reviewsRef.current?.scrollIntoView({
@@ -213,7 +215,10 @@ const Index = () => {
           </Button>
         </div>
 
-        <div className="flex items-center gap-3 p-4 border border-border rounded-lg">
+        <div 
+          onClick={() => setStoreDialogOpen(true)}
+          className="flex items-center gap-3 p-4 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors"
+        >
           <div className="w-12 h-12 bg-[#ff3f00] rounded-full flex items-center justify-center">
             <span className="text-white font-bold text-xl">JBL</span>
           </div>
@@ -221,7 +226,7 @@ const Index = () => {
             <h3 className="font-bold">JBL</h3>
             <p className="text-sm text-muted-foreground">207 produtos</p>
           </div>
-          <Button variant="outline">Seguir</Button>
+          <Button variant="outline" onClick={(e) => e.stopPropagation()}>Seguir</Button>
         </div>
       </div>
 
@@ -280,6 +285,63 @@ const Index = () => {
             <ChevronDown className="w-5 h-5" />
           </button>)}
       </div>
+
+      {/* Store Details Dialog */}
+      <Dialog open={storeDialogOpen} onOpenChange={setStoreDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold">Detalhes da Loja</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-6 py-4">
+            <div className="flex items-center gap-3">
+              <div className="w-16 h-16 bg-[#ff3f00] rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-bold text-2xl">JBL</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">JBL</h3>
+                <div className="flex items-center gap-1">
+                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <span className="font-semibold">4,8</span>
+                  <span className="text-muted-foreground text-sm">(15.247 avaliações)</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <MapPin className="w-5 h-5 text-muted-foreground mt-0.5" />
+                <div>
+                  <h4 className="font-semibold">Localização</h4>
+                  <p className="text-muted-foreground">São Paulo, Brasil</p>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Package className="w-5 h-5 text-muted-foreground mt-0.5" />
+                <div>
+                  <h4 className="font-semibold">Produtos</h4>
+                  <p className="text-muted-foreground">207 produtos disponíveis</p>
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <Star className="w-5 h-5 text-muted-foreground mt-0.5" />
+                <div>
+                  <h4 className="font-semibold">Qualidade</h4>
+                  <p className="text-muted-foreground">98% de atitudes positivas</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Sobre a loja</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                Loja oficial JBL com produtos originais e garantia do fabricante. Frete grátis e devolução em até 30 dias. Atendimento especializado para melhor experiência de compra.
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border px-4 py-3 flex items-center justify-around">
