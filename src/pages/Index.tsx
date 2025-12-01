@@ -61,7 +61,8 @@ const Index = () => {
     location: "Rio de Janeiro, RJ",
     rating: 5,
     text: "Tem proporcionado momentos muitos divertidos com os amigos! única coisa que não me agradou é que os microfones não conectam com outros dispositivos... apenas nessa caixa. Então se algo acontecer com a caixa perco 2 microfones ótimos! a caixa é super linda e com som ótimo porém a bateria deixa a desejar mas se ligar na tomada fica perfeita.",
-    images: ["/product-0.jpg", "/product-3.jpg", "/product-4.jpg", "/product-1.jpg"]
+    images: ["/product-0.jpg", "/product-3.jpg", "/product-4.jpg", "/product-1.jpg"],
+    avatar: "https://jbloficialbr.lovable.app/assets/review-profile-2-CPHO2E74.jpg"
   }, {
     name: "Pedro Raul",
     location: "Belo Horizonte, MG",
