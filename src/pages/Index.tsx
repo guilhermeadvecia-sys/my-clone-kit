@@ -9,12 +9,16 @@ import jblLogo from "@/assets/jbl-logo.jpg";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
+import { cn } from "@/lib/utils"; // Importar cn para combinar classes
+
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
   const [voltageSelected, setVoltageSelected] = useState(false);
   const [storeDialogOpen, setStoreDialogOpen] = useState(false);
+  const [isFollowingStore, setIsFollowingStore] = useState(false); // Novo estado para o botão "Seguir"
   const reviewsRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+
   const scrollToReviews = () => {
     reviewsRef.current?.scrollIntoView({
       behavior: 'smooth',
@@ -32,6 +36,16 @@ const Index = () => {
   const handleBuyNow = () => {
     window.open('https://pagamento.eletronicpay.shop/checkout?product=c8fbf0e5-ca44-11f0-a40c-46da4690ad53', '_blank');
   };
+
+  const handleFollowStore = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Impede que o clique no botão abra o diálogo da loja
+    setIsFollowingStore(prev => !prev);
+    toast({
+      title: isFollowingStore ? "Você deixou de seguir a loja." : "Você está seguindo a loja!",
+      duration: 2000,
+    });
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -44,11 +58,13 @@ const Index = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
+
   const reviews = [{
     name: "Carlos Silva",
     location: "São Paulo, SP",
@@ -249,7 +265,16 @@ const Index = () => {
             <h3 className="font-bold">JBL</h3>
             <p className="text-sm text-muted-foreground">207 produtos</p>
           </div>
-          <Button variant="outline" onClick={(e) => e.stopPropagation()}>Seguir</Button>
+          <Button 
+            variant="outline" 
+            onClick={handleFollowStore}
+            className={cn(
+              "rounded-full",
+              isFollowingStore && "bg-primary text-primary-foreground hover:bg-primary/90"
+            )}
+          >
+            {isFollowingStore ? "Seguindo" : "Seguir"}
+          </Button>
         </div>
       </div>
 
