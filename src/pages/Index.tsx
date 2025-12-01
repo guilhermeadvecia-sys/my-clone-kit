@@ -10,6 +10,7 @@ import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils"; // Importar cn para combinar classes
+import BlackFridayPromoDialog from "@/components/BlackFridayPromoDialog"; // Importar o novo componente
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
@@ -95,6 +96,7 @@ const Index = () => {
     avatar: "https://jbloficialbr.lovable.app/assets/review-profile-new-4-CaSKJ7Oh.jpg"
   }];
   return <div className="min-h-screen bg-background">
+      <BlackFridayPromoDialog /> {/* Adicionando o componente do pop-up aqui */}
       {/* Header */}
       <header className="sticky top-0 z-50 bg-background border-b border-border px-4 py-3 flex items-center justify-between">
         <button className="p-2">
