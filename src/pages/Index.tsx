@@ -54,7 +54,7 @@ const Index = () => {
     location: "São Paulo, SP",
     rating: 5,
     text: "Pra finalidade que vou usar,que é plugar um violão ou viola na entrada p 10 de mic ,ficou espetacular pra fazer rodas de viola onde tem muita gente conversando perto e cobrindo o som do instrumento, plugado para voz e violão também ficou um som muito limpo, única coisa achei que daria mais que 120db com 100 watts rms,sendo que minha jbl flip 6 que tem apenas 30 wats alcança incríveis 99 db.",
-    images: ["/product-1.jpg", "/product-2.jpg"],
+    images: ["https://jbloficialbr.lovable.app/assets/review-jbl-1-49B0eYAa.webp", "https://jbloficialbr.lovable.app/assets/review-jbl-2-BUSZ0QNT.webp"],
     avatar: "https://jbloficialbr.lovable.app/assets/review-profile-carlos-7iuLmgL6.jpg"
   }, {
     name: "Rafaela Lima",
