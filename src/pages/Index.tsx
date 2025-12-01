@@ -75,7 +75,7 @@ const Index = () => {
     location: "Curitiba, PR",
     rating: 5,
     text: "Produto com ótima qualidade, grave muito bom e bateria muito duradoura.",
-    images: ["/product-4.jpg", "/product-0.jpg"],
+    images: ["https://jbloficialbr.lovable.app/assets/review-jbl-9-DBk0XvHG.webp", "https://jbloficialbr.lovable.app/assets/review-jbl-10-E_RW5IQH.webp"],
     avatar: "https://jbloficialbr.lovable.app/assets/review-profile-new-4-CaSKJ7Oh.jpg"
   }];
   return <div className="min-h-screen bg-background">
