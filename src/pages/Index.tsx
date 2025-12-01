@@ -194,7 +194,7 @@ const Index = () => {
             </div>
             <div>
               <h4 className="font-semibold text-success">Frete grátis</h4>
-              <p className="text-sm text-muted-foreground">Entrega expressa em todo Brasil. Receba seu produto em até 15 dias úteis com código de rastreamento completo.</p>
+              <p className="text-sm text-muted-foreground">Entrega expressa em todo Brasil. Receba seu produto em até 5 dias úteis com código de rastreamento completo.</p>
             </div>
           </div>
 
