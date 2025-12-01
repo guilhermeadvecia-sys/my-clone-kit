@@ -17,6 +17,8 @@ const Index = () => {
   const [voltageSelected, setVoltageSelected] = useState(false);
   const [storeDialogOpen, setStoreDialogOpen] = useState(false);
   const [isFollowingStore, setIsFollowingStore] = useState(false); // Novo estado para o botão "Seguir"
+  const [showImageDialog, setShowImageDialog] = useState(false); // Estado para controlar o diálogo da imagem
+  const [currentImage, setCurrentImage] = useState<string | null>(null); // Estado para a imagem atual no diálogo
   const reviewsRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
@@ -45,6 +47,11 @@ const Index = () => {
       title: isFollowingStore ? "Você deixou de seguir a loja." : "Você está seguindo a loja!",
       duration: 2000,
     });
+  };
+
+  const handleImageClick = (imageUrl: string) => {
+    setCurrentImage(imageUrl);
+    setShowImageDialog(true);
   };
 
   useEffect(() => {
@@ -236,7 +243,15 @@ const Index = () => {
               <p className="text-sm text-muted-foreground">{review.location}</p>
               <p className="text-sm">{review.text}</p>
               {review.images.length > 0 && <div className="flex gap-2 overflow-x-auto">
-                  {review.images.map((img, imgIndex) => <img key={imgIndex} src={img} alt={`Avaliação ${index + 1} - Foto ${imgIndex + 1}`} className="w-20 h-20 rounded object-cover flex-shrink-0" />)}
+                  {review.images.map((img, imgIndex) => (
+                    <img 
+                      key={imgIndex} 
+                      src={img} 
+                      alt={`Avaliação ${index + 1} - Foto ${imgIndex + 1}`} 
+                      className="w-20 h-20 rounded object-cover flex-shrink-0 cursor-pointer" 
+                      onClick={() => handleImageClick(img)}
+                    />
+                  ))}
                 </div>}
             </div>)}
         </div>
@@ -393,6 +408,15 @@ const Index = () => {
               </p>
             </div>
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Image Viewer Dialog */}
+      <Dialog open={showImageDialog} onOpenChange={setShowImageDialog}>
+        <DialogContent className="sm:max-w-3xl p-0">
+          {currentImage && (
+            <img src={currentImage} alt="Imagem da Avaliação" className="w-full h-auto object-contain max-h-[90vh]" />
+          )}
         </DialogContent>
       </Dialog>
 
