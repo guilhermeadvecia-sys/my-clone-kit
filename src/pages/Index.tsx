@@ -141,7 +141,7 @@ const Index = () => {
         <div className="flex items-center justify-between">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="font-bold text-accent-foreground text-2xl">R$ 37,90</span>
+              <span className="font-bold text-accent-foreground text-2xl">R$ 99,90</span>
               <Gift className="text-accent-foreground w-[15px] h-[15px]" />
             </div>
             <div className="flex items-center gap-2">
