@@ -413,7 +413,7 @@ const Index = () => {
 
       {/* Image Viewer Dialog */}
       <Dialog open={showImageDialog} onOpenChange={setShowImageDialog}>
-        <DialogContent className="sm:max-w-3xl p-0">
+        <DialogContent className="sm:max-w-xl p-0"> {/* Alterado de sm:max-w-3xl para sm:max-w-xl */}
           {currentImage && (
             <img src={currentImage} alt="Imagem da Avaliação" className="w-full h-auto object-contain max-h-[90vh]" />
           )}
