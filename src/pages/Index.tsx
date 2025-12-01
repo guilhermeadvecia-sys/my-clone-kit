@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Star, Home, MessageCircle, Share2, ShoppingCart, X, ChevronDown, Truck, RotateCcw, Gift, MapPin, Package } from "lucide-react";
 import productImage from "@/assets/product-main.png";
+import jblLogo from "@/assets/jbl-logo.jpg";
 import { useState, useEffect, useRef } from "react";
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState(59 * 60 + 40); // 59 minutos e 40 segundos
@@ -219,8 +220,8 @@ const Index = () => {
           onClick={() => setStoreDialogOpen(true)}
           className="flex items-center gap-3 p-4 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors"
         >
-          <div className="w-12 h-12 bg-[#ff3f00] rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">JBL</span>
+          <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+            <img src={jblLogo} alt="JBL" className="w-full h-full object-cover" />
           </div>
           <div className="flex-1">
             <h3 className="font-bold">JBL</h3>
@@ -294,8 +295,8 @@ const Index = () => {
           </DialogHeader>
           <div className="space-y-6 py-4">
             <div className="flex items-center gap-3">
-              <div className="w-16 h-16 bg-[#ff3f00] rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-2xl">JBL</span>
+              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                <img src={jblLogo} alt="JBL" className="w-full h-full object-cover" />
               </div>
               <div>
                 <h3 className="font-bold text-lg">JBL</h3>
