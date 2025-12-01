@@ -345,7 +345,7 @@ const Index = () => {
 
       {/* Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 bg-background border-t border-border px-4 py-3 flex items-center justify-around">
-        <button className="flex flex-col items-center gap-1">
+        <button onClick={() => setStoreDialogOpen(true)} className="flex flex-col items-center gap-1">
           <Home className="w-6 h-6" />
           <span className="text-xs">Loja</span>
         </button>
