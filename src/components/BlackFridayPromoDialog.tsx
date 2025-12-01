@@ -23,7 +23,7 @@ const BlackFridayPromoDialog = () => {
           />
           <DialogTitle className="text-2xl font-bold">Promoção Black Friday</DialogTitle>
           <DialogDescription className="text-lg text-muted-foreground mt-2">
-            Aproveite agora mesmo!
+            Cupom de frete grátis disponível
           </DialogDescription>
         </DialogHeader>
         <div className="mt-6">
