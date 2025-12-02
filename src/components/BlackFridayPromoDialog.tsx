@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Gift } from "lucide-react"; // Importar o ícone de cupom
 
 const BlackFridayPromoDialog = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const BlackFridayPromoDialog = () => {
         </DialogHeader>
         <div className="mt-6">
           <Button onClick={() => setIsOpen(false)} className="w-full">
-            Fechar
+            <Gift className="mr-2 h-4 w-4" /> Resgatar Cupom
           </Button>
         </div>
       </DialogContent>
